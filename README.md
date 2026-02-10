@@ -1,0 +1,1 @@
+<p> Create a Simple Calculator using HTML , CSS and JAVASCRIPT </p>
