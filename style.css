@@ -1,65 +1,67 @@
-body {
+/* index.html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* index2.html */
+
+body{
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    background: #1e1e2f;
-    font-family: Arial, sans-serif;
-    color: #cbc2c2cd;
-}
+    color: black;
 
-.calculator {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background: #2c2c3e;
-    padding: 20px;
-    border-radius: 10px;
-    height: 400px;
-    width: 350px;
 }
-
-#display {
+.calculator2{
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    text-align: center;
+    background: #fff;
+}
+.calculator2 h2{
+    color: green;
+    margin-bottom: 5px;
+}
+.calculator2 p{
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+.input-section{
+    text-align: left;
+    margin-bottom: 25px;
+}
+.input-section label{
+    display: block;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.input-section input{
     width: 100%;
-    height: 60px;
-    font-size: 32px;
-    margin-bottom: 15px;
-    text-align: right;
-    padding-right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+.input-section input:focus{
+    box-shadow: 0 0 5px #afaeae;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    height: 100%;
+#btn{
     width: 100%;
+    background-color: green;
+    margin: 20px 0;
 }
-
-button {
-    height: 55px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.equal {
-    background: #ff9500;
-    color: white;
-}
-
-.zero {
-    grid-column: span 2;
-}
-
-button {
-    background: #3f3f5e;
-    color: white;
+.price{
+    padding: 12px;
+    background-color: #f1f8e9;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #2e7d32;
 }
