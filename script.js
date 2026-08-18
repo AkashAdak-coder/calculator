@@ -7,7 +7,7 @@ function switchTab(tabId){
   document.getElementById(tabId).classList.add('active');
   event.currentTarget.classList.add('active');
 }
-//Normal Calculator Functions
+//Normal Calculator Logics
 let displayBox = document.getElementById('display-calc');
 
 function clearCalc(){
@@ -24,4 +24,30 @@ function calculateResult(){
   } catch(error){
     displayBox.value = 'Error';
   }
+}
+
+//age calculator logic
+function calculateAge() {
+    let birthInput = document.getElementById('birthdate').value;
+    if (!birthInput) return;
+
+    let birthDate = new Date(birthInput);
+    let today = new Date();
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+      months--;
+      let previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+      days += previousMonth.getDate();
+    }
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    document.getElementById('age-result').innerHTML = 
+      `<strong>Age:</strong> ${years} Years, ${months} Months, and ${days} Days.`;
 }
