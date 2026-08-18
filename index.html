@@ -1,31 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gram Prize</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="calculator2">
-    <h2>🍀 GramPrice Calculator</h2>
-    <p>Calculate exact price by grams</p>
+  <main>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('normal')">Normal Calc</button>
+        <button class="tab-btn" onclick="switchTab('age')">Age Calc</button>
+        <button class="tab-btn" onclick="switchTab('emi')">Emi Calc</button>
+        <button class="tab-btn" onclick="switchTab('weight')">Weight Price Calc</button>
+      </div>
 
-    <div class="input-section">
-        <label>Price per Kg (₹)</label>
-        <input type="number" placeholder="Enter price per kg">
+      <div class="tab-content active" id="normal">
+        <h2>Standard Calculator</h2>
+        <input type="text" id="display-calc" placeholder="0">
+        <div class="grid-calc">
+          <button class="btn-clear" onclick="clearCalc()">c</button>
+          <button onclick="pressKey('/')">/</button>
+          <button onclick="pressKey('*')">*</button>
+          <button onclick="pressKey('-')">-</button>
+          <button onclick="pressKey('7')">7</button>
+          <button onclick="pressKey('8')">8</button>
+          <button onclick="pressKey('9')">9</button>
+          <button onclick="pressKey('+')">+</button>
+          <button onclick="pressKey('4')">4</button>
+          <button onclick="pressKey('5')">5</button>
+          <button onclick="pressKey('6')">6</button>
+          <button onclick="pressKey('1')">1</button>
+          <button onclick="pressKey('2')">2</button>
+          <button onclick="pressKey('3')">3</button>
+          <button class="btn-equal" onclick="calculateResult()">=</button>
+          <button class="btn-zero" onclick="pressKey('0')">0</button>
+          <button onclick="pressKey('.')">.</button>
+        </div>
+      </div>
 
-    </div><div class="input-section">
-        <label>Required Quantity (grams)</label>
-        <input type="number" placeholder="Enter quantity in grams">
+      <div class="tab-content" id="age">
+        <h2>Age Calculator</h2>
+        <label>Select Birthdate:</label>
+        <input type="date" id="birthday">
+        <button>Calculate Age</button>
+
+        <div class="result"></div>
+      </div>
+
+      <div class="tab-content" id="emi">
+        <h2>EMI Interest Calculator</h2>
+        <input type="number" name="loan-amount" placeholder="Loan Amount (₹)">
+        <input type="number" name="loan-interest" placeholder="Interset Rate (%)">
+        <input type="number" name="loan-tenure" placeholder="Tenure (Months)">
+        <button>Calculate EMI</button>
+
+        <div class="result"></div>
+      </div>
+
+      <div class="tab-content" id="weight">
+        <h2>Weight Price Calculator</h2>
+        <input type="number" name="1kg price" placeholder="Enter 1kg Item Price">
+        <input type="number" name="Item weight" placeholder="Enter weight you want (grams)">
+        <button>Calculate Price</button>
+
+        <div class="result"></div>
+      </div>
     </div>
+  </main>
 
-    <button id="btn">Calculate</button>
-
-    <div class="price">
-        Total Price :₹ 0.00
-    </div>
-
-   </div>
+  <script src="script.js"></script>
 </body>
 </html>
