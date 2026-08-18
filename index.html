@@ -51,12 +51,12 @@
 
       <div class="tab-content" id="emi">
         <h2>EMI Interest Calculator</h2>
-        <input type="number" name="loan-amount" placeholder="Loan Amount (₹)">
-        <input type="number" name="loan-interest" placeholder="Interset Rate (%)">
-        <input type="number" name="loan-tenure" placeholder="Tenure (Months)">
-        <button>Calculate EMI</button>
+        <input type="number" name="loan-amount" placeholder="Loan Amount (₹)" id="loan-amount">
+        <input type="number" name="loan-interest" placeholder="Interset Rate (%)" id="interest-rate">
+        <input type="number" name="loan-tenure" placeholder="Tenure (Months)" id="loan-tenure">
+        <button onclick="calculateEMI()">Calculate EMI</button>
 
-        <div class="result"></div>
+        <div class="result" id="emi-result"></div>
       </div>
 
       <div class="tab-content" id="weight">

@@ -51,3 +51,26 @@ function calculateAge() {
     document.getElementById('age-result').innerHTML = 
       `<strong>Age:</strong> ${years} Years, ${months} Months, and ${days} Days.`;
 }
+// --- 3. EMI Calculator Logic ---
+function calculateEMI() {
+    let P = parseFloat(document.getElementById('loan-amount').value);
+    let annualRate = parseFloat(document.getElementById('interest-rate').value);
+    let N = parseFloat(document.getElementById('loan-tenure').value);
+
+    if (isNaN(P) || isNaN(annualRate) || isNaN(N)) return;
+
+    // Monthly interest rate calculation
+    let R = (annualRate / 12) / 100;
+
+    // Standard Banking EMI Formula: P * R * (1+R)^N / ((1+R)^N - 1)
+    let emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+    let totalPayment = emi * N;
+    let totalInterest = totalPayment - P;
+
+    document.getElementById('emi-result').innerHTML = `
+      <strong>Monthly EMI:</strong> ₹${emi.toFixed(2)}<br>
+      <strong>Principal Amount:</strong> ₹${P.toFixed(2)}<br>
+      <strong>Total Interest:</strong> ₹${totalInterest.toFixed(2)}<br>
+      <strong>Total Payable:</strong> ₹${totalPayment.toFixed(2)}
+    `;
+}
