@@ -13,7 +13,7 @@
         <button class="tab-btn active" onclick="switchTab('normal')">Normal Calc</button>
         <button class="tab-btn" onclick="switchTab('age')">Age Calc</button>
         <button class="tab-btn" onclick="switchTab('emi')">Emi Calc</button>
-        <button class="tab-btn" onclick="switchTab('weight')">Weight Price Calc</button>
+        <button class="tab-btn" onclick="switchTab('weight-price')">Weight Price Calc</button>
       </div>
 
       <div class="tab-content active" id="normal">
@@ -59,14 +59,16 @@
         <div class="result" id="emi-result"></div>
       </div>
 
-      <div class="tab-content" id="weight">
+      <div class="tab-content" id="weight-price">
         <h2>Weight Price Calculator</h2>
-        <input type="number" name="1kg price" placeholder="Enter 1kg Item Price">
-        <input type="number" name="Item weight" placeholder="Enter weight you want (grams)">
-        <button>Calculate Price</button>
 
-        <div class="result"></div>
-      </div>
+        <input type="number" name="1kg price" placeholder="Price per 1 KG (₹):" id="kgPrice">
+
+        <input type="number" name="Item weight" placeholder="Weight Needed (Grams):" id="grams">
+        <button onclick="weightPriceCalculate()">Calculate Price</button>
+
+      <div class="result" id="weight-price-result"></div>
+    </div>
     </div>
   </main>
 

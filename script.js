@@ -74,3 +74,23 @@ function calculateEMI() {
       <strong>Total Payable:</strong> ₹${totalPayment.toFixed(2)}
     `;
 }
+
+
+// ---4. Weight Price Calculate Logic ---
+function weightPriceCalculate(){
+    let kgPrice = parseFloat(document.getElementById('kgPrice').value);
+    let weightGram = parseFloat(document.getElementById('grams').value);
+    let result = document.getElementById('weight-price-result');
+
+    if(isNaN(kgPrice) || isNaN(weightGram) || kgPrice <= 0 || weightGram <= 0){
+        result.innerHTML = `<p style="color: red;">Enter Your Value</p>`;
+    }
+
+    let gramPrice = kgPrice / 1000;
+    let totalPrice = gramPrice * weightGram;
+
+    result.innerHTML = 
+    `<strong> 1kg Price : </strong> ${kgPrice.toFixed(2)} <br>
+    <strong> Item Weight : </strong> ${weightGram} grams <br>
+    <strong> Item Price : </strong> ${totalPrice.toFixed(2)}`;
+}
