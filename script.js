@@ -26,6 +26,10 @@ function calculateResult(){
   }
 }
 
+function deleteBtn(){
+  displayBox.value = displayBox.value.slice(0,-1);
+}
+
 //age calculator logic
 function calculateAge() {
     let birthInput = document.getElementById('birthdate').value;
