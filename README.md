@@ -20,6 +20,12 @@ A clean, light, and responsive web application built with vanilla JavaScript, CS
   $$EMI = \frac{P \cdot R \cdot (1 + R)^N}{(1 + R)^N - 1}$$
 * **Detailed Breakdown:** Displays **Monthly Payment**, **Principal Amount**, **Total Interest**, and total payable amount.
 
+### 4. Weight-to-Price Calculator
+* **Flexible Portion Pricing:** Calculates the exact cost of an item based on its price per kilogram and the weight in grams.
+* **Proportional Breakdown:** Dynamically scales down the kilogram rate to find the per-gram price, then calculates the final total.
+* **Input Validation:** Built-in error catching alerts users instantly if any required fields are left blank or contain invalid numbers.
+
+
 ---
 
 ## 🚀 Live Demo & Usage
