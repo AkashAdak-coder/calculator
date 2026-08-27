@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 body{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +13,8 @@ body{
   background: whitesmoke;
 }
 .container{
-  width: 380px;
+  width: 100%;
+  max-width: 400px;
   background: white;
   padding: 20px;
   border: none;
@@ -22,6 +24,10 @@ body{
 .tabs{
   display: flex;
   justify-content: space-between;
+  gap: 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
   border-bottom: 2px solid #8080804d;
   margin-bottom: 20px;
   padding: 10px 0;
@@ -32,7 +38,7 @@ body{
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  padding: 8px 5px;
+  padding: 8px 12px;
   cursor: pointer;
   font-size: 13px;
 }
@@ -73,6 +79,20 @@ button:hover{
   color: white;
 }
 /* normal calculator */
+.calc-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.history-button{
+  padding: 10px;
+  cursor: pointer;
+}
+.history-button:hover{
+  background-color: #e5e3e3;
+  border-radius: 50%;
+  color: #007bff;
+}
 #display-calc{
   background: #e9ecef;
   text-align: right;
@@ -102,6 +122,53 @@ button:hover{
   background-color: #03bd03;
   color: black;
   grid-row: span 2;
+}
+.history-panel{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #333;
+  padding: 10px 25px;
+  width: 320px;
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.596);
+}
+.panel-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d4d1d1;
+}
+.panel-header h3{
+  font-size: 18px;
+  color: #333;
+}
+.panel-header .close-btn{
+  padding: 5px;
+  width: 30px;
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+}
+.panel-header .close-btn:hover{
+  color: #f04747;
+  background-color: transparent;
+}
+.history-list{
+  flex: 1;
+  overflow-y: auto;
+}
+.history-list li{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hidden{
+  display: none;
 }
 /* result box */
 .result{

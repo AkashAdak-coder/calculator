@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +15,17 @@
         <button class="tab-btn" onclick="switchTab('age')">Age Calc</button>
         <button class="tab-btn" onclick="switchTab('emi')">Emi Calc</button>
         <button class="tab-btn" onclick="switchTab('weight-price')">Weight Price Calc</button>
+        <button class="tab-btn" onclick="switchTab('weight-price')">Weight Price Calc</button>
+        <button class="tab-btn" onclick="switchTab('weight-price')">Weight Price Calc</button>
       </div>
 
       <div class="tab-content active" id="normal">
-        <h2>Standard Calculator</h2>
+        <div class="calc-header">
+          <h2>Standard Calculator</h2>
+          <div class="history-button">
+            <i class="fa-solid fa-clock-rotate-left"></i>          
+          </div>
+        </div>
         <input type="text" id="display-calc" placeholder="0">
         <div class="grid-calc">
           <button class="btn-clear" onclick="clearCalc()">C</button>
@@ -40,6 +48,17 @@
           <button class=" pressKey ">.</button>
           <button class=" pressKey ">0</button>
           <button  class=" pressKey ">00</button>
+        </div>
+
+        <div class="history-panel hidden">
+          <div class="panel-header">
+            <h3>Calculator History</h3>
+            <button class="close-btn">x</button>
+          </div>
+          <ul class="history-list">
+            <li>no history record yet</li>
+          </ul>
+          <button id="clear-history-btn">Clear All</button>
         </div>
       </div>
 
