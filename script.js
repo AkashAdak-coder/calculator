@@ -9,20 +9,27 @@ function switchTab(tabId){
 }
 //---1. Normal Calculator Logics ---
 let displayBox = document.getElementById('display-calc');
+let keyword = '';
 
 function clearCalc(){
   displayBox.value = '';
+  keyword = '';
 }
 
 document.querySelectorAll('.pressKey').forEach(button => {
   button.addEventListener('click', () =>{
     displayBox.value += button.textContent;
+    keyword += button.textContent;
   });
 });
 
 function calculateResult(){
   try{
     displayBox.value = eval(displayBox.value);
+    storeHistory();
+    displayHistory();
+
+    keyword = displayBox.value;
   } catch(error){
     displayBox.value = 'Error';
   }
@@ -100,3 +107,44 @@ function weightPriceCalculate(){
   <strong> Item Weight : </strong> ${weightGram} grams <br>
   <strong> Item Price : </strong> ${totalPrice.toFixed(2)}`;
 }
+
+// History Panel All Logics
+
+const historyBtn = document.querySelector('.history-button');
+const historyPanel = document.querySelector('.history-panel');
+const closeBtn = document.querySelector('.close-btn');
+
+historyBtn.addEventListener('click', ()=> {
+  historyPanel.classList.toggle('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+  historyPanel.classList.toggle('hidden');
+});
+
+let historyList = [];
+
+function storeHistory(){
+  let newObject = {
+    data : ''
+  };
+  newObject.data = `${keyword} = ${displayBox.value}`;
+  historyList.push(newObject);
+}
+
+function displayHistory(){
+  let html = '';
+  historyList.forEach(list => {
+    html += `<div class="history-data"> ${list.data} </div>`;
+  });
+
+  document.querySelector('.history-list').innerHTML = html;
+}
+
+function clearAll(){
+  document.querySelector('.history-list').innerHTML = '';
+}
+
+document.querySelector('#clear-history-btn').addEventListener('click', () => {
+  clearAll();
+});

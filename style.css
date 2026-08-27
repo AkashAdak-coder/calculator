@@ -162,9 +162,11 @@ button:hover{
   flex: 1;
   overflow-y: auto;
 }
-.history-list li{
-  text-align: center;
-  margin-top: 30px;
+
+.history-data{
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 0 10px 10px;
 }
 
 .hidden{
