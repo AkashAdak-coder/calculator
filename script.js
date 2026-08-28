@@ -135,13 +135,14 @@ function storeHistory(){
 function displayHistory(){
   let html = '';
   historyList.forEach(list => {
-    html += `<div class="history-data"> ${list.data} </div>`;
+    html += `<div class="history-data">${list.data}</div>`;
   });
 
   document.querySelector('.history-list').innerHTML = html;
 }
 
 function clearAll(){
+  historyList = [];
   document.querySelector('.history-list').innerHTML = '';
 }
 
