@@ -169,12 +169,16 @@ button:hover{
 
 .history-data{
   width: 100%;
-  margin: 30px 0;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  font-weight: 600;
+  margin: 15px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #495057;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #007bff;
+  transition: transform 0.2s ease;
 }
-
 .hidden{
   display: none;
 }
