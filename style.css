@@ -13,7 +13,7 @@ body{
   background: whitesmoke;
 }
 .container{
-  width: 650px;
+  width: clamp(300px,90vw,550px);
   background: white;
   padding: 25px;
   border: none;
@@ -191,40 +191,3 @@ button:hover{
   border-left: 2px solid #007bff;
 }
 /* responsive layout */
-@media(min-width:360px) and (max-width: 500px){
-  .container{
-    padding: 15px;
-    width: 350px;
-  }
-  .grid-calc{
-    gap: 6px;
-  }
-  .grid-calc button{
-    padding: 13px 0;
-    font-size: 16px;
-  }
-  #display-calc{
-    font-size: 22px;
-  }
-  .history-panel{
-    width: 350px;
-  }
-}
-
-@media(min-width:501px) and (max-width:1024px){
-  .container{
-    width: 500px;
-  }
-  .history-panel{
-    width: 500px;
-  }
-  .tab-btn{
-    padding: 10px 12px;
-  }
-  #display-calc{
-    font-size: 38px;
-  }
-  .grid-calc button{
-    padding: 16px;
-  }
-}
