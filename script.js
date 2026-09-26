@@ -37,6 +37,7 @@ function calculateResult(){
 
 function deleteBtn(){
   displayBox.value = displayBox.value.slice(0,-1);
+  keyword = displayBox.value;
 }
 
 // ---2. age calculator logic ---
@@ -124,12 +125,16 @@ closeBtn.addEventListener('click', () => {
 
 let historyList = [];
 
+if(historyList.length > 0){
+  document.querySelector('.history-button-icon').style.color = 'red';
+}
+
 function storeHistory(){
   let newObject = {
     data : ''
   };
   newObject.data = `${keyword} = ${displayBox.value}`;
-  historyList.push(newObject);
+  historyList.unshift(newObject);
 }
 
 function displayHistory(){
