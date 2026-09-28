@@ -63,7 +63,6 @@ function blink(){
 
 function historyPanel(){
   document.querySelector('.cal-history-panel').classList.toggle('history-appear');
-  blink();
 }
 
 sunIcon.addEventListener('click', toggleTheam);
@@ -157,7 +156,7 @@ let resultCon = document.querySelector('.age-result');
 let  calculateBtn = document.querySelectorAll('.calculate');
 
 function calculateAge(){
-  let userDOB = document.querySelector('.input-date');
+  let userDOB = document.getElementById('input-date');
   if(!userDOB) return;
 
   let birthDate = new Date(userDOB.value);
